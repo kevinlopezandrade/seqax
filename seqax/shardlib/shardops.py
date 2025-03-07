@@ -1,4 +1,4 @@
-import shardlib.shardtypes as shardtypes
+from . import shardtypes
 from jax import lax
 import jax.numpy as jnp
 import jax

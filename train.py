@@ -3,9 +3,9 @@ import operator
 import os
 import time
 
-import env
+import seqax.env as env
 env.set_variables()
-import shardlib.shardtypes as shardtypes
+import seqax.shardlib.shardtypes as shardtypes
 shardtypes.register_with_typeguard()
 import gcsfs  # Needed for clearml setup
 
@@ -20,15 +20,15 @@ from jax import lax
 from jax.sharding import PartitionSpec
 import jax.numpy as jnp
 import math
-from input_loader import FlatTokensParams, HuggingFaceDataParams, TokenBatch, TokenBatchParams, get_loader
-from shardlib.shardtypes import bf16, bool_, f32, pytree_dataclass, u32, make_shardings, Array
-import shardlib.shardops as shardops
+from seqax.input_loader import FlatTokensParams, HuggingFaceDataParams, TokenBatch, TokenBatchParams, get_loader
+from seqax.shardlib.shardtypes import bf16, bool_, f32, pytree_dataclass, u32, make_shardings, Array
+import seqax.shardlib.shardops as shardops
 P = PartitionSpec
 import einops
-import jax_extra
-from jax_extra import fold_in_str, explicit_activation_checkpointing, save_for_backward
+import seqax.jax_extra as jax_extra
+from seqax.jax_extra import fold_in_str, explicit_activation_checkpointing, save_for_backward
 import os
-import training_io
+import seqax.training_io as training_io
 from clearml import Task
 from jax.experimental import mesh_utils
 from jax.sharding import Mesh

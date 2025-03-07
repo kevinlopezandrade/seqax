@@ -22,7 +22,7 @@ import numpy as np
 from typeguard import typechecked as typechecker
 from dataclasses import dataclass
 from hydra.core.config_store import ConfigStore
-import flat_tokens
+from . import flat_tokens
 
 @dataclass
 class Config:
